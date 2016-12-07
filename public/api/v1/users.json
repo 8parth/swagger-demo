@@ -79,6 +79,38 @@
       "path": "/api/v1/users/{id}",
       "operations": [
         {
+          "summary": "Get a user",
+          "notes": "get information of user by passing his user id",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "ID of User",
+              "required": true
+            }
+          ],
+          "nickname": "Api::V1::Users#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/users/{id}",
+      "operations": [
+        {
           "summary": "update user",
           "notes": "make sure you pass parameters in users' hash:",
           "responseMessages": [
@@ -86,6 +118,11 @@
               "code": 200,
               "responseModel": null,
               "message": "Ok"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
             },
             {
               "code": 422,
@@ -132,6 +169,43 @@
           ],
           "nickname": "Api::V1::Users#update",
           "method": "patch"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/users/{id}",
+      "operations": [
+        {
+          "summary": "Delete a user",
+          "notes": "Delete user by passing his user id",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "ID of User",
+              "required": true
+            }
+          ],
+          "nickname": "Api::V1::Users#destroy",
+          "method": "delete"
         }
       ]
     }
