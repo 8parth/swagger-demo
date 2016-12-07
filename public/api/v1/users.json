@@ -1,0 +1,140 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "resourcePath": "users",
+  "apis": [
+    {
+      "path": "/api/v1/users",
+      "operations": [
+        {
+          "summary": "Get all users",
+          "notes": "Nothing else, it's that simple!",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            }
+          ],
+          "nickname": "Api::V1::Users#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/users",
+      "operations": [
+        {
+          "summary": "create a user",
+          "notes": "make sure you pass parameters in users' hash:",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "user[name]",
+              "type": "string",
+              "description": "Name",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user[age]",
+              "type": "integer",
+              "description": "Age",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "user[status]",
+              "type": "string",
+              "description": "status: can be active or inactive",
+              "required": false,
+              "allowableValues": {
+                "valueType": "LIST",
+                "values": [
+                  "active",
+                  "inactive"
+                ]
+              }
+            }
+          ],
+          "nickname": "Api::V1::Users#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/users/{id}",
+      "operations": [
+        {
+          "summary": "update user",
+          "notes": "make sure you pass parameters in users' hash:",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "ID of User",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user[name]",
+              "type": "string",
+              "description": "Name",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user[age]",
+              "type": "integer",
+              "description": "Age",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "user[status]",
+              "type": "string",
+              "description": "status: can be active or inactive",
+              "required": false,
+              "allowableValues": {
+                "valueType": "LIST",
+                "values": [
+                  "active",
+                  "inactive"
+                ]
+              }
+            }
+          ],
+          "nickname": "Api::V1::Users#update",
+          "method": "patch"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}

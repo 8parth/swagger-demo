@@ -1,0 +1,19 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "apis": [
+    {
+      "path": "/api/v1/users.{format}",
+      "description": "Users Management"
+    }
+  ],
+  "authorizations": null,
+  "info": {
+    "title": "Swagger Demo",
+    "description": "How Swagger works",
+    "contact": "parthmodi54@yahoo.com",
+    "license": "Apache 2.0",
+    "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0.html"
+  }
+}
